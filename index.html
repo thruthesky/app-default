@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+        <title>홈페이지 제목</title>
+		<link rel="stylesheet" type="text/css" href="../app-basic/js/jquery.mobile-1.4.0/jquery.mobile-1.4.0.min.css">
+		<!--[if lt IE 9]>
+			<script src="../app-basic/js/jquery/jquery-1.11.0-beta3.js"></script>
+		<![endif]-->
+		<!--[if gte IE 9]><!-->
+			<script src="../app-basic/js/jquery/jquery-2.1.0-beta3.js"></script>
+		<!--<![endif]-->
+		<script src="../app-basic/js/mobileinit.js"></script>
+
+		<script src="../app-basic/js/jquery.mobile-1.4.0/jquery.mobile-1.4.0.min.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<script src="index.js"></script>
+		<script src="../app-basic/js/default.js"></script>
+		
+		
+    </head>
+    <body>
+		<div id='home' data-role='page'>
+			<div class='header' data-role='header' data-position='fixed' data-tap-toggle='false'></div>
+			<div class='content ui-content' data-role='main'>
+				<h1>Home</h1>
+				<a href='#test'>Go to test page</a>
+				<ul class='listview' data-role='listview' data-inset='true' data-filter='true' data-filter-placeholder='Search category...' >
+					<li><a href='#a'>Hi, How are you?</a></li>
+					<li><a href='#a'>Hello, I'm fine.</a></li>
+				</ul>
+			</div>
+			<div class='footer' data-role='footer'>.footer</div>
+		</div>
+		<div id='test' data-role='page'>
+			<div class='header' data-role='header' data-position='fixed' data-tap-toggle='false'></div>
+			<div class='content ui-content' data-role='main'>
+				<h1>TEST</h1>
+				<a href='#home'>Go back to home</a>
+			</div>
+			<div class='footer' data-role='footer'>.footer</div>
+		</div>
+		<div id='page1' data-role='page'>
+			<div class='header' data-role='header' data-position='fixed' data-tap-toggle='false'></div>
+			<div class='content ui-content' data-role='main'>
+				<h1>Page 1</h1>
+				<a href='#home'>Go back to home</a>
+			</div>
+			<div class='footer' data-role='footer'>.footer</div>
+		</div>
+		<div id='page2' data-role='page'>
+			<div class='header' data-role='header' data-position='fixed' data-tap-toggle='false'></div>
+			<div class='content ui-content' data-role='main'>
+				<h1>Page2</h1>
+				<a href='#home'>Go back to home</a>
+			</div>
+			<div class='footer' data-role='footer'>.footer</div>
+		</div>
+		
+    </body>
+</html>

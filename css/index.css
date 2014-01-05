@@ -6,7 +6,7 @@ a {
 	height: 58px;
 	overflow:hidden;
 	border: 0;
-	background: url(img/header_back.png)!important;
+	background: url(../img/header_back.png)!important;
 }
 .header .left {
 	float: left;

@@ -1,6 +1,6 @@
 $(function(){
-	page_header( 'header.html' );
-	page_footer( 'footer.html' );
+	page_header( 'template/header.html' );
+	page_footer( 'template/footer.html' );
 	$('body').on('click', 'a', function(){
 		if ( $(this).prop('target') == '_blank' ) {
 			if ( ! is_online() ) {

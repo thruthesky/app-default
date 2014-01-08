@@ -13,6 +13,7 @@ $(function(){
 
 function callback_device_ready()
 {
+	$(".footer .title").append(" (c)");
 }
 
 function callback_online()

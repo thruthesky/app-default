@@ -1,22 +1,31 @@
 $(function(){
 	page_header( 'template/header.html' );
 	page_footer( 'template/footer.html' );
-	$('body').on('click', 'a', function(){
+	
+	// with reverse tethering, the internet is okay even is_online returns false
+	// make it option with debugging mode
+	/*$('body').on('click', 'a', function(){
 		if ( $(this).prop('target') == '_blank' ) {
 			if ( ! is_online() ) {
 				message('인터넷을 연결 해 주세요.');
 				return false;
 			}
 		}
-	});
+	});*/
 });
 
 function callback_device_ready()
 {
+	load_app();
 	$(".footer .title").append(" (c)");
 }
 
 function callback_online()
+{
+	load_app();
+}
+
+function load_app()
 {
 	api_load(
 		{

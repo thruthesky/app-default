@@ -1,8 +1,8 @@
 $(function(){
 	page_header( 'template/header.html' );
 	page_footer( 'template/footer.html' );
-	page_content( 'home', "<img src='img/first-page.jpg'>" );
-	
+	page_content( 'home', "<img class='first-image' src='img/first-page.jpg'>" );
+	$('.first-image').css('width','100%');
 	// with reverse tethering, the internet is okay even is_online returns false
 	// make it option with debugging mode
 	/*$('body').on('click', 'a', function(){

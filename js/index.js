@@ -1,6 +1,7 @@
 $(function(){
 	page_header( 'template/header.html' );
 	page_footer( 'template/footer.html' );
+	page_content( 'home', "<img src='img/first-page.jpg'>" );
 	
 	// with reverse tethering, the internet is okay even is_online returns false
 	// make it option with debugging mode
@@ -12,6 +13,7 @@ $(function(){
 			}
 		}
 	});*/
+	
 });
 
 function callback_device_ready()

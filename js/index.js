@@ -1,14 +1,12 @@
 $(function(){
-	page_header( 'template/header.html' );
+	//page_header( 'template/header.html' );
+	page_header( 'template/header-cebu-city.html' );
 	page_footer( 'template/footer.html' );
-	
 	
 	page_content( 'home', "<img class='first-image' src='img/first-page.jpg'>" );
 	$('.first-image').css('width','100%');
 	
-	// 이 부분은 앱을 배포 할 때 주석을 풀어야 한다.
-	// with reverse tethering, the internet is okay even is_online returns false
-	// make it option with debugging mode
+	/* #디버깅모드 링크 표시 */
 	if ( debug ) {
 	}
 	else {

@@ -3,10 +3,9 @@ a {
 }
 /* header */
 .header {
-	height: 58px;
+	height: 4em;
 	overflow:hidden;
 	border: 0;
-	background: url(../img/header_back.png)!important;
 }
 .header .left {
 	float: left;
@@ -44,7 +43,7 @@ a {
 
 /* media query */
 .em20, .em30, .em40, .em50, .em60  { display: none; }
-/* .em0 : 0em 부터 19em 까지는 block */
+/* .em0 : 0em 부터 19em 까지는 기본 block */
 .em0 { display:block; }
 /* 320px */
 /* .em20 : 20em 부터 29em 까지 block */

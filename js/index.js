@@ -3,7 +3,7 @@ $(function(){
 	page_header( 'template/header-cebu-city.html' );
 	page_footer( 'template/footer.html' );
 	
-	page_content( 'home', "<img class='first-image' src='img/first-page.jpg'>" );
+	page_content( 'home', "<img class='first-image' src='img/default/first-page.jpg'>" );
 	$('.first-image').css('width','100%');
 	
 	/* #디버깅모드 링크 표시 */
@@ -27,6 +27,7 @@ function callback_device_ready()
 	trace("callback_device_ready() begins ...");
 	load_app();
 	$(".footer .title").append(" (c)");
+	
 }
 
 function callback_online()

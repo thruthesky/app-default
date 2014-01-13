@@ -1,18 +1,39 @@
 .header {
-	background-color: black!important;
+	background-color: #050505!important;
 	box-shadow: 1px 1px 4px grey;
 }
+
 .header .menu {
 	margin: 0;
 	padding: 0;
 	list-style:none;
 }
+
 .header .menu li {
-	display: inline;
+	display:inline-block;
+	margin: 0;
+	padding: 0;
 }
+
+.header .menu li:first-child {
+	margin-left: 0.5em;
+}
+
+
 .header .menu a {
+	display:inline-block;
+	padding: 0.75em 0.25em;
 	color: white;
 	font-weight: normal;
 	font-size: 0.75em;
 	text-shadow: 0 0 0;
+}
+
+.header .menu a .icon {
+	text-align: center;
+	margin-bottom: 0.2em;
+}
+
+.header .menu a .logo.icon {
+	margin-bottom: 0.1em;
 }

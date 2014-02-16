@@ -1,6 +1,7 @@
 $(function(){
 	//page_header( 'template/header.html' );
-	page_header( 'template/header-cebu-city.html' );
+	//page_header( 'template/header-cebu-city.html' );
+	page_header( 'template/header-ringing.html' );
 	page_footer( 'template/footer.html' );
 	
 	page_content( 'home', "<img class='first-image' src='img/default/first-page.jpg'>" );

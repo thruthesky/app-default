@@ -25,6 +25,14 @@
 		<script>
 			/** #디버깅모드 */
 			var debug = 0;
+			$(function(){
+				ajax_load('../tinnitus/index.html', callback_load_index);
+			});
+			function callback_load_index(data)
+			{
+				page_content('home', data);
+			}
+			
 		</script>
 		<script src="js/index.js"></script>
 		<script src="../app-library/js/default.js"></script>

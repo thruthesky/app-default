@@ -4,70 +4,107 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
-        <title>홈페이지 제목</title>
-		<link rel="stylesheet" type="text/css" href="../app-library/js/jquery.mobile-1.4.0/jquery.mobile-1.4.0.min.css">
+        <title>Tinnitus</title>
 		<!--[if lt IE 9]>
-			<script src="../app-library/js/jquery/jquery-1.11.0-beta3.js"></script>
+			<script src="../app-library/js/jquery/jquery-1.11.0.min.js"></script>
 		<![endif]-->
 		<!--[if gte IE 9]><!-->
-			<script src="../app-library/js/jquery/jquery-2.1.0-beta3.js"></script>
+			<script src="../app-library/js/jquery/jquery-2.1.0.min.js"></script>
 		<!--<![endif]-->
 		<script src="../app-library/js/mobileinit.js"></script>
-
-		<script src="../app-library/js/jquery.mobile-1.4.0/jquery.mobile-1.4.0.min.js"></script>
-		
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		
-		<!-- 여기에 추가 CSS 를 기록 할 것 -->
+		<!-- Add CSS files here if you need -->
 		<link rel="stylesheet" type="text/css" href="css/cebu-city.css">
 		<!--<link rel="stylesheet" type="text/css" href="css/company-book.css">-->
-		
-		<script>
-			/** #디버깅모드 */
-			var debug = 0;
-			$(function(){
-				ajax_load('../tinnitus/index.html', callback_load_index);
-			});
-			function callback_load_index(data)
-			{
-				page_content('home', data);
+		<style>
+			.play, .stop, .volume {
+				cursor: pointer;
 			}
+		</style>
+		<script>
+			/** Debugging mode */
+			var debug = 0;
+			var ms = new Object();//{};
+			$(function(){
+				$('#sound-list li').each(function(){
+					$(this).append("<span class='play'>[Play]</span> <span class='stop'>[Stop]</span> <span class='volume'>[Volume]</span>");
+				});
+				
+				$('body').on( 'click', '.play', function(){
+					var file = $(this).parent().prop('id');
+					play_audio( file );
+				});
+				$('body').on( 'click', '.stop', function(){
+					var file = $(this).parent().prop('id');
+					play_pause( file );
+				});
+				
+			});
+			
+			function callback_device_ready()
+			{
+				//play_audio('/android_asset/www/tinnitus/rain_with_pygmy_owl.mp3');
+				//play_audio('/android_asset/www/tinnitus/small_green_groggies.mp3');
+				//play_audio('/android_asset/www/tinnitus/marsh.mp3');
+			}
+			
+			function play_audio(file) {
+				var url = "/android_asset/www/tinnitus/" + file + ".mp3";
+				// Play the audio file at url
+				ms[file] = new Media(url,
+					// success callback
+					function () {
+						console.log("playAudio():Audio Success");
+					},
+					// error callback
+					function (err) {
+						console.log("playAudio():Audio Error: code=" + err.code + ", message=" + err.message );
+					}
+				);
+				
+				trace("Play: " + url );
+				// Play audio
+				ms[file].play();
+			}
+			function play_pause(file) {
+				ms[file].pause();
+			}
+
 			
 		</script>
 		<script src="js/index.js"></script>
 		<script src="../app-library/js/default.js"></script>
 		
-		<!-- 여기에 추가 Javascript 를 기록 할 것 -->
+		<!-- Add Javascript file here -->
 		
     </head>
     <body>
-		<div id='home' data-role='page'>
-			<div class='header' data-role='header' data-position='fixed' data-tap-toggle='false'></div>
-			<div class='content ui-content' data-role='main'>
+		<div id='layout'>
+			<div class='header'>
+				<ul>
+					<li><a href='#'>홈페이지</a>
+					<li><a href='#'>자유토론</a>
+					<li><a href='#'>질문답변</a>
+					<li><a href='#'>이명치료</a>
+				</ul>
+				
+			</div>
+			<div class='content'>
 				<!-- First Page -->
+				
+				<ul id='sound-list'>
+				<li id='rain_with_pygmy_owl'>Rain with pygmy_owl</li>
+				<li id='small_green_groggies'>Small green groggies</li>
+				<li id='marsh'>Marsh</li>
+				<li id='deep_woods'>Deep Woods</li>
+				<li id='songbirds'>Song Birds</li>
+				<li id='white-noise'>White Noise</li>
+				</ul>
+				
 			</div>
-			<div class='footer' data-role='footer'>.footer</div>
+			<div class='footer'>.footer</div>
 		</div>
-		<div id='page1' data-role='page'>
-			<div class='header' data-role='header' data-position='fixed' data-tap-toggle='false'></div>
-			<div class='content ui-content' data-role='main'>
-				<!-- Page 1 -->
-			</div>
-			<div class='footer' data-role='footer'>.footer</div>
-		</div>
-		<div id='page2' data-role='page'>
-			<div class='header' data-role='header' data-position='fixed' data-tap-toggle='false'></div>
-			<div class='content ui-content' data-role='main'>
-				<!-- Page 2 -->
-			</div>
-			<div class='footer' data-role='footer'>.footer</div>
-		</div>
-		<div id='page3' data-role='page'>
-			<div class='header' data-role='header' data-position='fixed' data-tap-toggle='false'></div>
-			<div class='content ui-content' data-role='main'>
-				<!-- Page 3 -->
-			</div>
-			<div class='footer' data-role='footer'>.footer</div>
-		</div>
+		
     </body>
 </html>
